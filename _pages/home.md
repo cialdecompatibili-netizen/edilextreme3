@@ -26,7 +26,7 @@ seo_description: "Lavori edili su fune senza ponteggi a Roma e nel Lazio: pulizi
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&display=swap');
 /* ===== HERO FUNE: chiaro, verde Monster + nero. Alto quanto lo schermo meno la barra, cosi' sotto si intravede la sezione dopo. Il canvas della costellazione resta nell'HTML ma e' nascosto ===== */
 :root{--fune-ink:#111416;--fune-green:#95d600;--fune-paper:#f7f8f3;--hl:max(1rem,calc(50% - 38rem))}
-.rete-box{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:calc(100vh - 130px);height:calc(100svh - 130px);min-height:380px;max-height:660px;padding:2rem 0;background:var(--fune-paper);color:var(--fune-ink);text-align:left;overflow:hidden}
+.rete-box{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;width:100vw;max-width:none;margin:-3rem 0 0 calc(50% - 50vw);height:calc(100vh - 106px);height:calc(100svh - 106px);min-height:380px;max-height:660px;padding:2rem 0;background:var(--fune-paper);color:var(--fune-ink);text-align:left;overflow:hidden}
 .rete-box canvas#rete-cv{display:none}
 .rete-box::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:var(--hl);width:6px;background:var(--fune-green)}
 .rete-box::after{content:"";position:absolute;z-index:0;top:0;right:0;bottom:0;width:34%;background:var(--fune-ink);clip-path:polygon(34% 0,100% 0,100% 100%,0 100%)}
