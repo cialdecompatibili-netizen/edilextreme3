@@ -23,10 +23,22 @@ seo_description: "Lavori edili su fune senza ponteggi a Roma e nel Lazio: pulizi
 
 <style>
 .post-header{display:none}
-.rete-box{position:relative;overflow:visible;isolation:isolate;text-align:center;width:100%;max-width:none;margin:0;padding:3rem 0}
-.rete-box canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block;pointer-events:none}
-.rete-box > *{position:relative}
-.rete-box h2{margin-top:0}
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&display=swap');
+/* ===== HERO FUNE (stile verde Monster su antracite). Il canvas della costellazione resta nell'HTML ma e' nascosto: per tornare al vecchio box basta togliere queste regole ===== */
+:root{--fune-ink:#14171a;--fune-ink2:#1d2226;--fune-green:#95d600;--fune-bone:#f4f5f0}
+.rete-box{position:relative;isolation:isolate;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);padding:5rem 1.5rem 5.5rem;background:linear-gradient(135deg,var(--fune-ink) 0%,var(--fune-ink2) 55%,var(--fune-ink) 100%);color:var(--fune-bone);text-align:left;overflow:hidden}
+.rete-box canvas#rete-cv{display:none}
+.rete-box::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:max(1rem,calc(50% - 25rem));width:4px;background:var(--fune-green)}
+.rete-box > *{position:relative;z-index:1;max-width:46rem;margin-left:auto;margin-right:auto;padding-left:1.6rem}
+.rete-box h2{margin-top:0;font-family:'Archivo Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.9rem);line-height:1.04;color:#fff;border:0}
+.rete-box p,.rete-box strong{color:var(--fune-bone)}
+.rete-box a:not(.fune-btn){color:var(--fune-green)}
+.fune-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.fune-btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;font-weight:700;text-decoration:none;background:var(--fune-green);color:var(--fune-ink)!important;border:2px solid var(--fune-green)}
+.fune-btn:hover,.fune-btn:focus-visible{background:#fff;border-color:#fff;text-decoration:none}
+.fune-btn-2{background:transparent;color:#fff!important;border-color:#fff}
+.fune-btn-2:hover,.fune-btn-2:focus-visible{background:var(--fune-green);border-color:var(--fune-green);color:var(--fune-ink)!important}
+.fune-btn:focus-visible{outline:3px solid var(--fune-green);outline-offset:3px}
 /* ===== MARTE START (css) - INTERRUTTORE: home_marte in _config.yml (admin > Impostazioni, CLAUDE.md punto 27). HTML e JS sono dentro una condizione Liquid su site.home_marte: tieni START/END e i relativi if/endif in coppia, altrimenti la home si rompe senza errori. Per rimuovere Marte del tutto: cancella da qui a MARTE END (css), il blocco MARTE nell'HTML, lo script MARTE (js) e assets/img/marte.webp ===== */
 .rete-box .marte-orbita{position:absolute;z-index:-2;pointer-events:none;left:50%;top:50%;width:0;height:0;will-change:transform}
 .rete-box .marte-orbita .marte-y{position:absolute;left:0;top:0;width:0;height:0;will-change:transform}
@@ -37,37 +49,20 @@ html[data-theme=dark] .rete-box .marte{opacity:.66;box-shadow:0 0 34px 10px rgba
 @media (max-width:600px){.rete-box .marte{--mt:17vw}}
 /* ===== MARTE END (css) ===== */
 
-/* ===== SERVIZI HOME (nuova sezione, sotto il box costellazione) =====
-   Semplice griglia di 6 card che riprendono i PRIMI 6 servizi di _pages/servizi.md,
-   con link "Vedi tutti i servizi" verso /servizi/. Nessun altro blocco esistente toccato.
-   Per aggiungere/rimuovere una card: duplica/elimina un .srv-home-card qui sotto e nell'HTML. */
-.srv-home{margin:2.5rem 0}
-.srv-home h2{text-align:center;margin-bottom:1.4rem}
-.srv-home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
-.srv-home-card{display:block;color:inherit;text-decoration:none;padding:16px 18px;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:#fffdf5;text-align:left}
-.srv-home-card b{display:block;margin-bottom:4px}
-.srv-home-card small{opacity:.65;display:block}
-html[data-theme="dark"] .srv-home-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15)}
-.srv-home-more{text-align:center;margin-top:1.6rem}
-.srv-home-more a{display:inline-block;padding:.55rem 1.4rem;border-radius:999px;border:1px solid rgba(0,0,0,.2);text-decoration:none;font-weight:600}
-html[data-theme="dark"] .srv-home-more a{border-color:rgba(255,255,255,.3)}
-@media (max-width:700px){.srv-home-grid{grid-template-columns:1fr}}
-
-/* ===== PROGETTI HOME (sotto i servizi) =====
-   Stesso aspetto della griglia servizi, classi separate (prj-home*) di proposito: gli script che riallineano le card
-   dei servizi (pubblica_servizi.py) lavorano su .srv-home-card e non devono mai toccare queste.
-   Le card NON sono scritte a mano: le genera il ciclo Liquid nell'HTML qui sotto dai file di _projects/. */
-.prj-home{margin:2.5rem 0}
-.prj-home h2{text-align:center;margin-bottom:1.4rem}
-.prj-home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
-.prj-home-card{display:block;color:inherit;text-decoration:none;padding:16px 18px;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:#fffdf5;text-align:left}
-.prj-home-card b{display:block;margin-bottom:4px}
-.prj-home-card small{opacity:.65;display:block}
-html[data-theme="dark"] .prj-home-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15)}
-.prj-home-more{text-align:center;margin-top:1.6rem}
-.prj-home-more a{display:inline-block;padding:.55rem 1.4rem;border-radius:999px;border:1px solid rgba(0,0,0,.2);text-decoration:none;font-weight:600}
-html[data-theme="dark"] .prj-home-more a{border-color:rgba(255,255,255,.3)}
-@media (max-width:700px){.prj-home-grid{grid-template-columns:1fr}}
+/* ===== SERVIZI + PROGETTI HOME: stessa griglia, classi separate di proposito (srv-home* e prj-home*): gli script che riallineano le card dei servizi (pubblica_servizi.py) lavorano su .srv-home-card e non devono toccare le prj-home*. Le card le generano i cicli Liquid nell'HTML sotto ===== */
+.srv-home,.prj-home{margin:3rem 0}
+.srv-home h2,.prj-home h2{font-family:'Archivo Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:1.4rem;text-align:left}
+.srv-home-grid,.prj-home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:960px;margin:0}
+.srv-home-card,.prj-home-card{display:block;color:inherit;text-decoration:none;padding:16px 18px;border:1px solid rgba(0,0,0,.18);border-left:5px solid #95d600;border-radius:2px;background:transparent;text-align:left}
+.srv-home-card:hover,.srv-home-card:focus-visible,.prj-home-card:hover,.prj-home-card:focus-visible{border-color:#95d600;background:rgba(149,214,0,.1);text-decoration:none}
+.srv-home-card b,.prj-home-card b{display:block;margin-bottom:4px}
+.srv-home-card small,.prj-home-card small{opacity:.7;display:block}
+html[data-theme="dark"] .srv-home-card,html[data-theme="dark"] .prj-home-card{border-color:rgba(255,255,255,.2);border-left-color:#95d600}
+.srv-home-more,.prj-home-more{margin-top:1.6rem}
+.srv-home-more a,.prj-home-more a{display:inline-block;padding:.6rem 1.4rem;border-radius:2px;background:#14171a;color:#95d600;font-weight:700;text-decoration:none;border:2px solid #14171a}
+.srv-home-more a:hover,.srv-home-more a:focus-visible,.prj-home-more a:hover,.prj-home-more a:focus-visible{background:#95d600;color:#14171a;border-color:#95d600}
+html[data-theme="dark"] .srv-home-more a,html[data-theme="dark"] .prj-home-more a{border-color:#95d600}
+@media (max-width:700px){.srv-home-grid,.prj-home-grid{grid-template-columns:1fr}}
 </style>
 
 <div class="rete-box" id="rete-box" markdown="1">
@@ -83,6 +78,8 @@ EdilExtreme porta in alto operatori formati per lavori edili e di manutenzione: 
 Evitare ponteggi e piattaforme aeree accorcia i tempi, riduce il disagio per chi abita e lavora nell'edificio e alleggerisce il budget. Lavoriamo a Roma, Latina, Rieti, Viterbo e Frosinone. Sopralluogo e preventivo sono gratuiti e senza impegno.
 
 **Hai bisogno di un intervento in quota?** Richiedi un preventivo gratuito: ti rispondiamo con una soluzione su misura.
+
+<p class="fune-cta"><a class="fune-btn" href="{{ '/contatti/' | relative_url }}">Richiedi preventivo gratuito</a><a class="fune-btn fune-btn-2" href="{{ '/servizi/' | relative_url }}">Guarda i servizi</a></p>
 
 </div>
 
