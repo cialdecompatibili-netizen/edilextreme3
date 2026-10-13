@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://cialdecompatibili-netizen.github.io/edilextreme3/sitemap.xml
+Sitemap: https://edilextreme.com/sitemap.xml
