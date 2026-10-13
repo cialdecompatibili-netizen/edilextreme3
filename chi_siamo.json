@@ -1,0 +1,102 @@
+{
+  "_nota": "Contenuto della pagina /chi-siamo/. Modifica SOLO questo file, poi lancia: python pubblica_chi_siamo.py --push. Le sezioni sono in 'sezioni' e vengono generate nell'ordine scritto: per aggiungere/togliere/riordinare basta duplicare o cancellare un blocco. Tipi sezione: hero, numeri, griglia, finale. Nei testi e' ammesso HTML semplice (<b>, <a>). {baseurl} non serve: i link usano il filtro relative_url.",
+
+  "pagina": {
+    "titolo": "chi siamo",
+    "permalink": "/chi-siamo/",
+    "description": "EdilExtreme: lavori in quota su fune nel Lazio. Pulizia, manutenzione, ristrutturazione e messa in sicurezza di tetti e facciate a Roma, Latina, Rieti, Viterbo e Frosinone.",
+    "nav": false
+  },
+
+  "contatti": {
+    "whatsapp": "",
+    "link_preventivo": "/contatti/",
+    "testo_whatsapp": "Scrivici su WhatsApp",
+    "testo_preventivo": "Richiedi un preventivo",
+    "testo_servizi": "Scopri i servizi",
+    "link_servizi": "/servizi/"
+  },
+
+  "stile": {
+    "prefisso_css": "cs",
+    "larghezza_max": "960px",
+    "raggio": "12px"
+  },
+
+  "sezioni": [
+    {
+      "tipo": "hero",
+      "eyebrow": "Chi siamo",
+      "titolo": "Arriviamo dove i ponteggi non servono: lavori in quota, in sicurezza, senza impalcature.",
+      "paragrafi": [
+        "<b>EdilExtreme</b> è una squadra di operatori che lavora in quota con la tecnica dell'accesso su fune. Interveniamo su tetti, facciate, grondaie, vetrate e coperture in tutto il Lazio, per condomini, aziende e privati che vogliono un lavoro fatto bene senza il costo e l'ingombro di un ponteggio.",
+        "Ogni intervento parte da un sopralluogo e da un preventivo chiaro. Poi lavoriamo con attrezzature controllate, doppia fune e procedure di sicurezza definite prima di salire."
+      ],
+      "bottoni": ["whatsapp", "preventivo", "servizi"]
+    },
+    {
+      "tipo": "numeri",
+      "voci": [
+        {"valore": "5 province", "etichetta": "Roma, Latina, Rieti, Viterbo, Frosinone"},
+        {"valore": "Doppia fune", "etichetta": "di lavoro e di sicurezza, sempre"},
+        {"valore": "Sopralluogo", "etichetta": "e preventivo senza impegno"},
+        {"valore": "Senza ponteggi", "etichetta": "meno tempi, meno costi, meno disagi"}
+      ],
+      "nota": ""
+    },
+    {
+      "tipo": "griglia",
+      "titolo": "Come lavoriamo",
+      "sottotitolo": "Un metodo semplice e sempre uguale, perché in quota non si improvvisa.",
+      "colonne": 3,
+      "numerata": true,
+      "card": [
+        {"titolo": "Sopralluogo", "testo": "Guardiamo il punto da raggiungere, valutiamo altezza, materiali, vento e accessi, e stabiliamo cosa serve davvero."},
+        {"titolo": "Preventivo e piano", "testo": "Ricevi un preventivo chiaro e, dove richiesto, un piano operativo di sicurezza secondo il D.Lgs. 81/2008."},
+        {"titolo": "Intervento su fune", "testo": "Gli operatori salgono con doppia fune, imbracature e dispositivi controllati, con l'area sottostante delimitata."},
+        {"titolo": "Consegna e foto", "testo": "A lavoro finito ti lasciamo un report fotografico, utile per amministratori, condomini e archivio."}
+      ]
+    },
+    {
+      "tipo": "griglia",
+      "titolo": "Cosa facciamo",
+      "sottotitolo": "Dalla manutenzione ordinaria alle emergenze, tutto ciò che si fa in alto.",
+      "colonne": 3,
+      "card": [
+        {"titolo": "Pulizia in quota", "testo": "Vetrate, grondaie, pannelli fotovoltaici e componenti di facciata puliti senza ponteggi.", "link": "/servizi/"},
+        {"titolo": "Tetti e coperture", "testo": "Controlli, riparazioni, rifacimenti e impermeabilizzazioni, anche su coperture difficili.", "link": "/servizi/"},
+        {"titolo": "Facciate e balconi", "testo": "Ristrutturazione, ripristino dei frontalini e tinteggiature complete su fune.", "link": "/servizi/"},
+        {"titolo": "Messa in sicurezza", "testo": "Rimozione di materiale pericolante e installazione di sistemi anticaduta e linee vita.", "link": "/servizi/"},
+        {"titolo": "Verde e alberi", "testo": "Potatura di alberi alti o difficili da raggiungere, con il minimo impatto intorno.", "link": "/servizi/"},
+        {"titolo": "Impianti e isolanti", "testo": "Canne fumarie, condizionatori, dissuasori per volatili e montaggio di isolanti termici.", "link": "/servizi/"}
+      ]
+    },
+    {
+      "tipo": "griglia",
+      "titolo": "Perché scegliere EdilExtreme",
+      "colonne": 2,
+      "card": [
+        {"titolo": "Sicurezza prima di tutto", "testo": "Procedure scritte, attrezzature verificate e operatori formati: non si sale se le condizioni non lo permettono."},
+        {"titolo": "Meno costi e meno disagi", "testo": "Niente montaggio di impalcature: i tempi si accorciano e la vita nell'edificio continua normalmente."},
+        {"titolo": "Un lavoro che si vede", "testo": "Interventi mirati, puliti e documentati con foto, perché tu possa verificare ciò che è stato fatto."},
+        {"titolo": "Conosciamo il territorio", "testo": "Lavoriamo in cinque province e adattiamo l'intervento al clima e agli edifici di ogni zona: salsedine, gelo, centri storici."}
+      ]
+    },
+    {
+      "tipo": "griglia",
+      "titolo": "Per chi lavoriamo",
+      "colonne": 3,
+      "card": [
+        {"titolo": "Condomini e amministratori", "testo": "Manutenzioni programmate, interventi urgenti e documentazione chiara per le assemblee."},
+        {"titolo": "Aziende e capannoni", "testo": "Coperture, vetrate, impianti e verifiche periodiche senza fermare l'attività."},
+        {"titolo": "Privati ed enti", "testo": "Ville, edifici storici, scuole e strutture pubbliche, con il rispetto che ogni edificio richiede."}
+      ]
+    },
+    {
+      "tipo": "finale",
+      "titolo": "Hai un lavoro in quota da fare?",
+      "testo": "Descrivici il problema e mandaci qualche foto: ti diciamo come intervenire e quanto costa. Sopralluogo e preventivo sono senza impegno.",
+      "bottoni": ["whatsapp", "preventivo", "servizi"]
+    }
+  ]
+}
