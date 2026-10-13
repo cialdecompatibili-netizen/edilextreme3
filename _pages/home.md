@@ -24,21 +24,27 @@ seo_description: "Lavori edili su fune senza ponteggi a Roma e nel Lazio: pulizi
 <style>
 .post-header{display:none}
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&display=swap');
-/* ===== HERO FUNE (stile verde Monster su antracite). Il canvas della costellazione resta nell'HTML ma e' nascosto: per tornare al vecchio box basta togliere queste regole ===== */
-:root{--fune-ink:#14171a;--fune-ink2:#1d2226;--fune-green:#95d600;--fune-bone:#f4f5f0}
-.rete-box{position:relative;isolation:isolate;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);padding:5rem 1.5rem 5.5rem;background:linear-gradient(135deg,var(--fune-ink) 0%,var(--fune-ink2) 55%,var(--fune-ink) 100%);color:var(--fune-bone);text-align:left;overflow:hidden}
+/* ===== HERO FUNE: chiaro, verde Monster + nero. Alto quanto lo schermo meno la barra, cosi' sotto si intravede la sezione dopo. Il canvas della costellazione resta nell'HTML ma e' nascosto ===== */
+:root{--fune-ink:#111416;--fune-green:#95d600;--fune-paper:#f7f8f3;--hl:max(1rem,calc(50% - 38rem))}
+.rete-box{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);height:calc(100vh - 130px);height:calc(100svh - 130px);min-height:380px;max-height:660px;padding:2rem 0;background:var(--fune-paper);color:var(--fune-ink);text-align:left;overflow:hidden}
 .rete-box canvas#rete-cv{display:none}
-.rete-box::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:max(1rem,calc(50% - 25rem));width:4px;background:var(--fune-green)}
-.rete-box > *{position:relative;z-index:1;max-width:46rem;margin-left:auto;margin-right:auto;padding-left:1.6rem}
-.rete-box h2{margin-top:0;font-family:'Archivo Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.9rem);line-height:1.04;color:#fff;border:0}
-.rete-box p,.rete-box strong{color:var(--fune-bone)}
-.rete-box a:not(.fune-btn){color:var(--fune-green)}
-.fune-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.rete-box::before{content:"";position:absolute;z-index:0;top:0;bottom:0;left:var(--hl);width:6px;background:var(--fune-green)}
+.rete-box::after{content:"";position:absolute;z-index:0;top:0;right:0;bottom:0;width:34%;background:var(--fune-ink);clip-path:polygon(34% 0,100% 0,100% 100%,0 100%)}
+.rete-box > *{position:relative;z-index:1;max-width:40rem;margin-left:var(--hl);margin-right:1rem;padding-left:1.8rem}
+.rete-box h2{margin-top:0;font-family:'Archivo Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;color:var(--fune-ink);border:0}
+.rete-box p{color:var(--fune-ink);font-size:1.05rem}
+.fune-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
 .fune-btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;font-weight:700;text-decoration:none;background:var(--fune-green);color:var(--fune-ink)!important;border:2px solid var(--fune-green)}
-.fune-btn:hover,.fune-btn:focus-visible{background:#fff;border-color:#fff;text-decoration:none}
-.fune-btn-2{background:transparent;color:#fff!important;border-color:#fff}
-.fune-btn-2:hover,.fune-btn-2:focus-visible{background:var(--fune-green);border-color:var(--fune-green);color:var(--fune-ink)!important}
-.fune-btn:focus-visible{outline:3px solid var(--fune-green);outline-offset:3px}
+.fune-btn:hover,.fune-btn:focus-visible{background:var(--fune-ink);border-color:var(--fune-ink);color:var(--fune-green)!important;text-decoration:none}
+.fune-btn-2{background:transparent;color:var(--fune-ink)!important;border-color:var(--fune-ink)}
+.fune-btn-2:hover,.fune-btn-2:focus-visible{background:var(--fune-ink);color:var(--fune-green)!important}
+.fune-btn:focus-visible{outline:3px solid var(--fune-ink);outline-offset:3px}
+.intro-fune{max-width:46rem;margin:2.5rem 0 0}
+@media (max-width:800px){.rete-box::after{width:12%;clip-path:polygon(40% 0,100% 0,100% 100%,0 100%)}.rete-box > *{margin-right:12%}}
+html[data-theme="dark"] .rete-box{background:#14171a;color:#f4f5f0}
+html[data-theme="dark"] .rete-box h2,html[data-theme="dark"] .rete-box p{color:#f4f5f0}
+html[data-theme="dark"] .rete-box::after{background:var(--fune-green)}
+html[data-theme="dark"] .fune-btn-2{color:#f4f5f0!important;border-color:#f4f5f0}
 /* ===== MARTE START (css) - INTERRUTTORE: home_marte in _config.yml (admin > Impostazioni, CLAUDE.md punto 27). HTML e JS sono dentro una condizione Liquid su site.home_marte: tieni START/END e i relativi if/endif in coppia, altrimenti la home si rompe senza errori. Per rimuovere Marte del tutto: cancella da qui a MARTE END (css), il blocco MARTE nell'HTML, lo script MARTE (js) e assets/img/marte.webp ===== */
 .rete-box .marte-orbita{position:absolute;z-index:-2;pointer-events:none;left:50%;top:50%;width:0;height:0;will-change:transform}
 .rete-box .marte-orbita .marte-y{position:absolute;left:0;top:0;width:0;height:0;will-change:transform}
@@ -75,11 +81,15 @@ html[data-theme="dark"] .srv-home-more a,html[data-theme="dark"] .prj-home-more 
 
 EdilExtreme porta in alto operatori formati per lavori edili e di manutenzione: pulizia di vetri e grondaie, tinteggiature, impermeabilizzazioni, ripristino di balconi, facciate e tetti, canne fumarie e rimozione di materiale pericolante. L'accesso su fune, nato dalla speleologia e dall'alpinismo, arriva dove un ponteggio non entra o costerebbe troppo.
 
+<p class="fune-cta"><a class="fune-btn" href="{{ '/contatti/' | relative_url }}">Richiedi preventivo gratuito</a><a class="fune-btn fune-btn-2" href="{{ '/servizi/' | relative_url }}">Guarda i servizi</a></p>
+
+</div>
+
+<div class="intro-fune" markdown="1">
+
 Evitare ponteggi e piattaforme aeree accorcia i tempi, riduce il disagio per chi abita e lavora nell'edificio e alleggerisce il budget. Lavoriamo a Roma, Latina, Rieti, Viterbo e Frosinone. Sopralluogo e preventivo sono gratuiti e senza impegno.
 
 **Hai bisogno di un intervento in quota?** Richiedi un preventivo gratuito: ti rispondiamo con una soluzione su misura.
-
-<p class="fune-cta"><a class="fune-btn" href="{{ '/contatti/' | relative_url }}">Richiedi preventivo gratuito</a><a class="fune-btn fune-btn-2" href="{{ '/servizi/' | relative_url }}">Guarda i servizi</a></p>
 
 </div>
 
