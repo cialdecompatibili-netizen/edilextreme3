@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 @AGENTS.md
 
-## Questo progetto (edilextreme2)
+## Questo progetto (edilextreme3)
 
-- **Repo GitHub:** `cialdecompatibili-netizen/edilextreme2` (sito EdilExtreme). Nata come clone di `italfuni` il 04/10/2026; testi dei 66 servizi, home e progetti riscritti in versione originale. Backup del vecchio al-folio: tag `backup-prima-italfuni-2026-10-04`. Immagini in `assets/img/servizi/` (ancora quelle del sito sorgente, da sostituire). Dati di contatto EdilExtreme da inserire.
-- **Sito live:** https://cialdecompatibili-netizen.github.io/edilextreme2/ (Pages, Source: branch `gh-pages`, creato da `deploy.yml`). Baseurl `/edilextreme2` ricavato da solo dal deploy (vedi punto 19), niente da scrivere a mano.
-- **Cartella locale:** `C:\Users\mirco\Desktop\edilextreme2` (remote origin = repo edilextreme2).
+- **Repo GitHub:** `cialdecompatibili-netizen/edilextreme3` (sito EdilExtreme, banco di prova per la nuova home in stile italfuni). Clone di `edilextreme2` del 13/10/2026 (storia ripartita da un commit); edilextreme2 nata come clone di `italfuni` il 04/10/2026; testi dei 66 servizi, home e progetti riscritti in versione originale. Backup del vecchio al-folio: tag `backup-prima-italfuni-2026-10-04`. Immagini in `assets/img/servizi/` (ancora quelle del sito sorgente, da sostituire). Dati di contatto EdilExtreme da inserire.
+- **Sito live:** https://cialdecompatibili-netizen.github.io/edilextreme3/ (Pages, Source: branch `gh-pages`, creato da `deploy.yml`). Baseurl `/edilextreme3` ricavato da solo dal deploy (vedi punto 19), niente da scrivere a mano.
+- **Cartella locale:** `C:\Users\mirco\Desktop\edilextreme3` (remote origin = repo edilextreme3).
 - **Origine:** copia locale di `crazyweb4test_new` (senza `.git`, `_site`, `node_modules`). Non lavorare su `crazyweb4test` ne' su `crazyweb4` da qui. I riferimenti a TEST/PROD/crazyweb4 piu' sotto descrivono il progetto d'origine: in italfuni esiste un solo repo (`repos.json`: blocco `test`, etichetta SITO) e NON c'e' PROD.
 - **Allineamento con crazyweb4test:** `clona_test.ps1` NON si usa qui (e' di crazyweb4test e copia da PROD). Le novita' di crazyweb4test si portano a mano, solo se Mirco lo chiede.
 - **NUOVO SITO DA QUESTO (procedura provata il 04/10/2026 con italfuni):** 1) repo vuota su GitHub (pubblica, senza README); 2) `robocopy <questa cartella> <nuova> /E /XD .git _site node_modules .jekyll-cache`; 3) nella nuova: `git init -b main`, commit, `remote add origin`, push; 4) quando il primo 'Deploy site' e' riuscito (crea `gh-pages`) abilitare Pages: `gh api -X POST repos/<owner>/<repo>/pages -f "source[branch]=gh-pages" -f "source[path]=/"`; 5) verificare l'HTML online: percorsi `/<nome-repo>/assets/...` e nessun nome del sito di partenza. NON toccare `url`/`baseurl` di `_config.yml` ne' `repos.json` (automatici). Se esiste `automazioni/.env`, nel clone togliere `GITHUB_OWNER`/`GITHUB_REPO`. Poi riscrivere il blocco 'Questo progetto' con nome, repo e URL del nuovo sito. Siti nati cosi': italfuni, edilextreme2.
