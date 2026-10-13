@@ -15,6 +15,7 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "CNAME"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -42,6 +43,7 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "CNAME"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -72,33 +74,33 @@ jobs:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout ðŸ›Žï¸
         uses: actions/checkout@v4
-      - name: Setup Ruby 💎
+      - name: Setup Ruby ðŸ’Ž
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Setup Python 🐍
+      - name: Setup Python ðŸ
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
-      - name: Setup Node 🧰
+      - name: Setup Node ðŸ§°
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-      - name: Install JS deps 📦
+      - name: Install JS deps ðŸ“¦
         run: npm ci
-      - name: Update _config.yml ⚙️
+      - name: Update _config.yml âš™ï¸
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+      - name: Install and Build ðŸ”§
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
@@ -115,11 +117,11 @@ jobs:
           printf 'url: "%s"\nbaseurl: "%s"\n' "$SITE_URL" "$BASE" > _ci_config.yml
           cat _ci_config.yml
           bundle exec jekyll build --config _config.yml,_ci_config.yml
-      - name: Purge unused CSS 🧹
+      - name: Purge unused CSS ðŸ§¹
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Deploy 🚀
+      - name: Deploy ðŸš€
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
